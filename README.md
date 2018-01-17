@@ -1,7 +1,7 @@
 # Pizza Order
 
-**Objectif:** Lire plusieurs fichiers XML respectant la XSD fourni en entrée (dossier d'entrée paramétrable via un fichier de configuration donné en paramètre de l'application) et afficher le nombre de pizzas commandés par client (nom et prénom) et générer un fichier commun JSON qui contient toutes les commandes.
-Penser à réaliser les test unitaires et utiliser les loggers.
+**Objectif:** Lire plusieurs fichiers XML respectant la XSD fourni en entrée (dossier d'entrée paramétrable via un fichier de configuration donné en paramètre de l'application) et afficher le nombre de pizzas commandés par client (nom et prénom) et générer un fichier commun JSON qui contient toutes les commandes. Pour au moins 5 pizzas, une margarita offerte.
+Penser à réaliser les tests unitaires et utiliser les loggers.
 
 	src/main/resources/pizza-order.xsd
 

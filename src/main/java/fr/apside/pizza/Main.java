@@ -28,6 +28,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import fr.apside.pizza.exception.ArgumentException;
 import fr.apside.pizza.exception.PizzaException;
+import fr.apside.pizza.xml.BaseType;
+import fr.apside.pizza.xml.PizzaNameType;
 import fr.apside.pizza.xml.PizzaOrder;
 import fr.apside.pizza.xml.PizzaType;
 
@@ -57,23 +59,31 @@ public class Main {
 
 	try (Stream<Path> list = Files.list(Paths.get(prop.getProperty("directory.in")));) {
 	    list.filter(p -> isValid(p)).forEach(path -> {
-		try (InputStream inputStream = Files.newInputStream(path);
-			OutputStream outputStream = Files.newOutputStream(Paths.get("target/orders.json"));) {
+		try (InputStream inputStream = Files.newInputStream(path);) {
 		    // Lecture XML
 		    JAXBContext jc = JAXBContext.newInstance(PizzaOrder.class);
 		    Unmarshaller unmarshaller = jc.createUnmarshaller();
 		    // Deserialisation
 		    PizzaOrder order = (PizzaOrder) unmarshaller.unmarshal(inputStream);
 
-		    listOrders.add(order);
-
 		    // Recuperation de la quantite de la commande
 		    BigInteger qte = order.getPizzas().getPizza().stream().map(PizzaType::getQuantity)
 			    .reduce(BigInteger.ZERO, BigInteger::add);
-		    log.info("Commande de " + qte + " pizzas pour "
+		    log.info("Commande initiale de " + qte + " pizzas pour "
 			    + order.getCustomer().getName().getFirstName() + " "
 			    + order.getCustomer().getName().getLastName());
 
+		    // Si il y a au moins 5 pizzas, on en ajoute une
+		    if (qte.intValue() >= 5) {
+			PizzaType gratos = new PizzaType();
+			gratos.setBase(BaseType.THIN);
+			gratos.setName(PizzaNameType.MARGHERITA);
+			gratos.setQuantity(BigInteger.ONE);
+			order.getPizzas().getPizza().add(gratos);
+			log.info("On ajoute une " + PizzaNameType.MARGHERITA.name() + " offerte. Wahou !");
+		    }
+
+		    listOrders.add(order);
 		} catch (IOException | JAXBException e) {
 		    String msg = "Erreur de lecture de l'XML";
 		    log.error(msg, e);
