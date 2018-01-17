@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ppp:PizzaOrder xmlns:ppp="http://www.pizza.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.pizza.com pizza_order.xsd ">
-  <ppp:orderID>commande1</ppp:orderID>
-  <ppp:date>2018-02-01</ppp:date>
-  <ppp:time>12:30:00</ppp:time>
-  <ppp:Customer>
-    <ppp:name>
-      <ppp:firstName>Bob</ppp:firstName>
-      <ppp:lastName>Morane</ppp:lastName>
-    </ppp:name>
-    <ppp:phone>0666666666</ppp:phone>
-    <ppp:address>
-      <ppp:houseNumber>666</ppp:houseNumber>
-      <ppp:street>rue des martyrs</ppp:street>
-      <ppp:postCode>37400</ppp:postCode>
-    </ppp:address>
-  </ppp:Customer>
-  <ppp:pizzas>
-    <ppp:pizza>
-      <ppp:name>Margherita</ppp:name>
-      <ppp:base>thin</ppp:base>
-      <ppp:quantity>2</ppp:quantity>
-    </ppp:pizza>
-  </ppp:pizzas>
-  <ppp:pizzas>
-    <ppp:pizza>
-      <ppp:name>Marinara</ppp:name>
-      <ppp:base>thin</ppp:base>
-      <ppp:quantity>1</ppp:quantity>
-    </ppp:pizza>
-  </ppp:pizzas>
+<ppp:PizzaOrder xmlns:ppp="http://www.pizza.com"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.pizza.com pizza_order.xsd ">
+	<ppp:orderID>commande1</ppp:orderID>
+	<ppp:date>2018-02-01</ppp:date>
+	<ppp:time>12:30:00</ppp:time>
+	<ppp:Customer>
+		<ppp:name>
+			<ppp:firstName>Bob</ppp:firstName>
+			<ppp:lastName>Morane</ppp:lastName>
+		</ppp:name>
+		<ppp:phone>0666666666</ppp:phone>
+		<ppp:address>
+			<ppp:houseNumber>666</ppp:houseNumber>
+			<ppp:street>rue des martyrs</ppp:street>
+			<ppp:postCode>37400</ppp:postCode>
+		</ppp:address>
+	</ppp:Customer>
+	<ppp:pizzas>
+		<ppp:pizza>
+			<ppp:name>Margherita</ppp:name>
+			<ppp:base>thin</ppp:base>
+			<ppp:quantity>2</ppp:quantity>
+		</ppp:pizza>
+		<ppp:pizza>
+			<ppp:name>Marinara</ppp:name>
+			<ppp:base>thin</ppp:base>
+			<ppp:quantity>1</ppp:quantity>
+		</ppp:pizza>
+	</ppp:pizzas>
 </ppp:PizzaOrder>
