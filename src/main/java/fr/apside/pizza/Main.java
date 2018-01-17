@@ -27,6 +27,7 @@ import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import fr.apside.pizza.exception.ArgumentException;
+import fr.apside.pizza.exception.PizzaException;
 import fr.apside.pizza.xml.PizzaOrder;
 import fr.apside.pizza.xml.PizzaType;
 
@@ -47,8 +48,9 @@ public class Main {
 	try (InputStream configInputStream = Files.newInputStream(Paths.get(configFile));) {
 	    prop.load(configInputStream);
 	} catch (IOException e) {
-	    log.error("Erreur de lecture de la config", e);
-	    throw e;
+	    String msg = "Erreur de lecture de la config";
+	    log.error(msg);
+	    throw new PizzaException(msg, e);
 	}
 
 	List<PizzaOrder> listOrders = new ArrayList<>();

@@ -5,7 +5,6 @@ import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -15,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import fr.apside.pizza.exception.ArgumentException;
+import fr.apside.pizza.exception.PizzaException;
 
 public class MainTest {
 
@@ -33,7 +33,7 @@ public class MainTest {
 	}
     }
 
-    @Test(expected = NoSuchFileException.class)
+    @Test(expected = PizzaException.class)
     public void should_fail_for_wrong_parameter() throws Exception {
 	String[] args = { "incorrect/config/path" };
 	Main.main(args);
