@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ppp:PizzaOrder xmlns:ppp="http://www.pizza.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.pizza.com pizza_order.xsd ">
+  <ppp:orderID>commande2</ppp:orderID>
+  <ppp:date>2018-01-01</ppp:date>
+  <ppp:time>12:00:00</ppp:time>
+  <ppp:Customer>
+    <ppp:name>
+      <ppp:firstName>Lucky</ppp:firstName>
+      <ppp:lastName>Luke</ppp:lastName>
+    </ppp:name>
+    <ppp:phone>0123456789</ppp:phone>
+    <ppp:address>
+      <ppp:houseNumber>12</ppp:houseNumber>
+      <ppp:street>rue des oiseaux</ppp:street>
+      <ppp:postCode>37000</ppp:postCode>
+    </ppp:address>
+  </ppp:Customer>
+  <ppp:pizzas>
+    <ppp:pizza>
+      <ppp:name>Prosciutto e Funghi</ppp:name>
+      <ppp:base>thick</ppp:base>
+      <ppp:quantity>1</ppp:quantity>
+    </ppp:pizza>
+    <ppp:pizza>
+      <ppp:name>Capricciosa</ppp:name>
+      <ppp:base>thin</ppp:base>
+      <ppp:quantity>1</ppp:quantity>
+    </ppp:pizza>
+  </ppp:pizzas>
+</ppp:PizzaOrder>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ppp:PizzaOrder xmlns:ppp="http://www.pizza.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.pizza.com ../main/resources/pizza_order.xsd ">
+  <ppp:orderID>token</ppp:orderID>
+  <ppp:date>2001-01-01</ppp:date>
+  <ppp:time>12:00:00</ppp:time>
+  <ppp:Customer>
+    <ppp:name>
+      <ppp:firstName>token</ppp:firstName>
+      <ppp:lastName>token</ppp:lastName>
+    </ppp:name>
+    <ppp:phone>token</ppp:phone>
+    <ppp:address>
+      <ppp:houseNumber>0</ppp:houseNumber>
+      <ppp:street>token</ppp:street>
+      <ppp:postCode>token</ppp:postCode>
+    </ppp:address>
+  </ppp:Customer>
+  <ppp:pizzas>
+    <ppp:pizza>
+      <ppp:name>Margherita</ppp:name>
+      <ppp:base>thin</ppp:base>
+      <ppp:quantity>0</ppp:quantity>
+    </ppp:pizza>
+  </ppp:pizzas>
+</ppp:PizzaOrder>
